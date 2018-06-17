@@ -12,6 +12,7 @@ super + @space
 
 # make sxhkd reload its configuration files:
 super + Escape
+	pkill redshift
 	pkill -USR1 -x sxhkd
 
 #
