@@ -1,0 +1,42 @@
+#!/bin/bash
+
+BAR_FIFO=/tmp/bspwm_bar_fifo
+BAR_WM_NAME="bspwm_bar"
+DIRNAME=$(dirname $0)
+
+if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
+	printf "%s\n" "The panel is already running." >&2
+	exit 1
+fi
+
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+[ -e "${BAR_FIFO}" ] && rm "${BAR_FIFO}"
+mkfifo "${BAR_FIFO}"
+
+Bat() {
+	PERC=$(acpi --battery | cut -d, -f2 | tr -d ' ')
+	echo "BAT$PERC" > "${BAR_FIFO}"
+}
+
+Vol() {
+	VOL=$(amixer sget Master | tail -1 | sed -re 's/.*\[([0-9]+)%\].*/\1/')
+	echo "VOL$VOL" > "${BAR_FIFO}"
+}
+
+Date() {
+	DATE=$(date +"%a %d %b, %H:%M")
+	echo "DAT$DATE" > "${BAR_FIFO}"
+}
+
+while :; do 
+	Date
+	Bat
+	Vol
+	sleep 5s;
+done &
+
+. ~/.cache/wal/colors.sh
+
+tail -f "${BAR_FIFO}" | $DIRNAME/bar_parser | lemonbar -g "x20" -B "${color0}" -F "${color7}" -p
+
+wait

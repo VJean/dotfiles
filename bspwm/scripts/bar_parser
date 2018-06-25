@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#num_mon=$(bspc query -M | wc -l)
+
+while read -r line ; do
+	case $line in
+		DAT*)
+			# clock output
+			date=${line#???}
+			;;
+		BAT*)
+			# battery capacity
+			_line=(${line#???})
+			bat="Bat: ${_line}%"
+			;;
+		VOL*)
+			# volume level
+			_line=(${line#???})
+			vol="Vol: ${_line}%"
+			;;
+	esac
+	printf "%s\n" "%{c}${date}%{r}${bat} ${vol} "
+done
