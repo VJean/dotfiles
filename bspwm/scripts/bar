@@ -37,6 +37,6 @@ done &
 
 . ~/.cache/wal/colors.sh
 
-tail -f "${BAR_FIFO}" | $DIRNAME/bar_parser | lemonbar -g "x20" -B "${color0}" -F "${color7}" -p
+tail -f "${BAR_FIFO}" | $DIRNAME/bar_parser | lemonbar -g "x20" -B "${color0}" -F "${color7}" -f "Iosevka Term-10" -f "Font Awesome" -p
 
 wait
