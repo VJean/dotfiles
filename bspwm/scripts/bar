@@ -19,7 +19,7 @@ Bat() {
 }
 
 Vol() {
-	VOL=$(amixer sget Master | tail -1 | sed -re 's/.*\[([0-9]+)%\].*/\1/')
+	VOL=$(amixer sget Master | tail -1 | sed -re 's/.*\[([0-9]+%)\].*/\1/')
 	echo "VOL$VOL" > "${BAR_FIFO}"
 }
 
