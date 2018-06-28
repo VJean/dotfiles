@@ -12,7 +12,6 @@ super + @space
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill redshift
 	pkill -USR1 -x sxhkd
 
 #
@@ -21,6 +20,7 @@ super + Escape
 
 # quit bspwm normally
 super + alt + Escape
+	pkill -x redshift
 	bspc quit
 
 # close and kill
