@@ -4,39 +4,40 @@ BAR_FIFO=/tmp/bspwm_bar_fifo
 BAR_WM_NAME="bspwm_bar"
 DIRNAME=$(dirname $0)
 
-if xdo id -a "$PANEL_WM_NAME" > /dev/null ; then
+
+if [ $(pgrep -cx panel) -gt 1 ] ; then
 	printf "%s\n" "The panel is already running." >&2
 	exit 1
 fi
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
+
 [ -e "${BAR_FIFO}" ] && rm "${BAR_FIFO}"
 mkfifo "${BAR_FIFO}"
 
-Bat() {
+while true;
+do
 	PERC=$(acpi --battery | cut -d, -f2 | tr -d ' ')
-	echo "BAT$PERC" > "${BAR_FIFO}"
-}
+	echo "BAT$PERC"
+	sleep 30;
+done > "$BAR_FIFO" &
 
-Vol() {
+while true;
+do
 	VOL=$(amixer sget Master | tail -1 | sed -re 's/.*\[([0-9]+%)\].*/\1/')
-	echo "VOL$VOL" > "${BAR_FIFO}"
-}
+	echo "VOL$VOL"
+	sleep 1
+done > "$BAR_FIFO" &
 
-Date() {
+while true;
+do
 	DATE=$(date +"%a %d %b, %H:%M")
 	echo "DAT$DATE" > "${BAR_FIFO}"
-}
-
-while :; do 
-	Date
-	Bat
-	Vol
-	sleep 5s;
-done &
+	sleep 45
+done > "$BAR_FIFO" &
 
 . ~/.cache/wal/colors.sh
 
-tail -f "${BAR_FIFO}" | $DIRNAME/bar_parser | lemonbar -g "x20" -B "${color0}" -F "${color7}" -f "Iosevka Term-10" -f "Font Awesome" -p
+cat "${BAR_FIFO}" | $DIRNAME/panel_bar | lemonbar -g "x20" -B "${color0}" -F "${color7}" -f "Iosevka Term-10" -f "Font Awesome 5 Free-10" | bash &
 
 wait

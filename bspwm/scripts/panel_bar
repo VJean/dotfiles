@@ -6,18 +6,18 @@ while read -r line ; do
 	case $line in
 		DAT*)
 			# clock output
-			date=${line#???}
+			date="${line#???}"
 			;;
 		BAT*)
 			# battery capacity
 			_line=(${line#???})
-			bat="Bat: ${_line}"
+			bat="${_line}"
 			;;
 		VOL*)
 			# volume level
 			_line=(${line#???})
-			vol="Vol: ${_line}"
+			vol="${_line}"
 			;;
 	esac
-	printf "%s\n" "%{c}${date}%{r}${bat} ${vol} "
+	echo -e "%{c}\uf242 ${date}%{r} \uf241 ${bat} \uf028 ${vol} "
 done
