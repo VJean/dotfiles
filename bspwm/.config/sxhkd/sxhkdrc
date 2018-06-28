@@ -20,6 +20,7 @@ super + Escape
 
 # quit bspwm normally
 super + alt + Escape
+	pkill -x lemon_panel
 	pkill -x redshift
 	bspc quit
 
