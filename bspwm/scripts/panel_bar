@@ -19,5 +19,5 @@ while read -r line ; do
 			vol="${_line}"
 			;;
 	esac
-	echo -e "%{c}\uf242 ${date}%{r} \uf241 ${bat} \uf028 ${vol} "
+	printf "%s\n" "%{c}\uf242 ${date}%{r} \uf241 ${bat} \uf028 ${vol} "
 done
