@@ -39,6 +39,6 @@ done > "$BAR_FIFO" &
 
 . ~/.cache/wal/colors.sh
 
-cat "${BAR_FIFO}" | $DIRNAME/panel_bar | lemonbar -g "x20" -B "${color0}" -F "${color7}" -f "Iosevka Term-10" -f "Font Awesome 5 Free-10" | bash &
+cat "${BAR_FIFO}" | $DIRNAME/panel_bar | lemonbar -g "x25" -B "${color0}" -F "${color7}" -f "Iosevka Term-10" -f "Font Awesome-10" | bash &
 
 wait
