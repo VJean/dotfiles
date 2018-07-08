@@ -18,8 +18,9 @@ mkfifo "${BAR_FIFO}"
 while true;
 do
 	PERC=$(acpi --battery | cut -d, -f2 | tr -d ' ')
-	echo "BAT$PERC"
-	sleep 30;
+	DISCHARGING=$(acpi --battery | grep -c Discharging)
+	echo "BAT${DISCHARGING},${PERC}"
+	sleep 5;
 done > "$BAR_FIFO" &
 
 while true;

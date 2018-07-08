@@ -11,7 +11,15 @@ while read -r line ; do
 		BAT*)
 			# battery capacity
 			_line=(${line#???})
-			bat="${_line}"
+			discharging=(${_line%%,*})
+			echo ${line} >> /tmp/ouioui.txt
+			if [ "$discharging" -eq 1 ] ; then
+				icon='\uf241'
+			else
+				icon='\uf1e6'
+			fi
+			level="${_line##*,}"
+			bat="${icon} ${level}"
 			;;
 		VOL*)
 			# volume level
@@ -19,5 +27,5 @@ while read -r line ; do
 			vol="${_line}"
 			;;
 	esac
-	printf "%s\n" "%{c}\uf242 ${date}%{r} \uf241 ${bat} \uf028 ${vol} "
+	echo -e "%{c}${date}%{r} ${bat} \uf028 ${vol} "
 done
