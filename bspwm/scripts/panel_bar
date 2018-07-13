@@ -21,11 +21,51 @@ while read -r line ; do
 			level="${_line##*,}"
 			bat="${icon} ${level}"
 			;;
+		BRI*)
+			# brightness
+			_line=(${line#???})
+			bright="\uf042 ${_line}"
+			;;
 		VOL*)
 			# volume level
 			_line=(${line#???})
 			vol="${_line}"
 			;;
+		W*)
+			# bspc report
+			wm=
+			IFS=':'
+			set -- ${line#?}
+			while [ $# -gt 0 ] ; do
+				item=$1
+				name=${item#?}
+				case $item in
+					[fFoOuU]*)
+						# square:f0c8 square-o:f096
+						# circle:f111 circle-o:f10c circle-dot:f192
+						case $item in
+							f*)
+								# free/occupied/urgent desktop
+								str="\uf10c"
+								;;
+							o*)
+								# focused free/occupied/urgent desktop
+								str="\uf192"
+								;;
+							u*)
+								# focused free/occupied/urgent desktop
+								str="\uf096"
+								;;
+							[FOU]*)
+								# focused free/occupied/urgent desktop
+								str="\uf111"
+								;;
+						esac
+						wm="${wm} ${str} "
+				esac
+				shift
+			done
+			;;
 	esac
-	echo -e "%{c}${date}%{r} ${bat} \uf028 ${vol} "
+	echo -e "%{l} ${wm}%{c}${date}%{r}${bat} \uf028 ${vol} ${bright} "
 done
