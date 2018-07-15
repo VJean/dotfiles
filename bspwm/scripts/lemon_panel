@@ -27,7 +27,7 @@ done > "$BAR_FIFO" &
 
 while true;
 do
-	BRIGHTNESS=$(cat /sys/class/backlight/intel_backlight/brightness)
+	BRIGHTNESS=$(xbacklight -get)
 	echo "BRI${BRIGHTNESS}"
 	sleep 5;
 done > "$BAR_FIFO" &
