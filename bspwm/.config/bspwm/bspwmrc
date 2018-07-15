@@ -20,4 +20,6 @@ bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+dunst -nb ${color0} -nf ${color7} -nfr ${color1} &
+
 ~/scripts/lemon_panel &

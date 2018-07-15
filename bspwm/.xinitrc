@@ -5,7 +5,6 @@ xrdb -merge ~/.Xresources
 test -f ~/.fehbg && ~/.fehbg &
 
 compton -b
-dunst &
 wal -R -a 80
 redshift &
 
