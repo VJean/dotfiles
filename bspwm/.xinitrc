@@ -9,6 +9,6 @@ dunst &
 wal -R -a 90
 redshift &
 
-
+amixer -q set Master 70%
 
 exec bspwm
