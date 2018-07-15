@@ -21,11 +21,6 @@ while read -r line ; do
 			level="${_line##*,}"
 			bat="${icon} ${level}"
 			;;
-		BRI*)
-			# brightness
-			_line=(${line#???})
-			bright="\uf042 ${_line}%"
-			;;
 		VOL*)
 			# volume level
 			_line=(${line#???})
@@ -67,5 +62,5 @@ while read -r line ; do
 			done
 			;;
 	esac
-	echo -e "%{l} ${wm}%{c}${date}%{r}${bat} \uf028 ${vol} ${bright} "
+	echo -e "%{l} ${wm}%{c}${date}%{r}${bat} \uf028 ${vol} "
 done

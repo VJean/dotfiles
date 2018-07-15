@@ -27,14 +27,6 @@ done > "$BAR_FIFO" &
 
 while true;
 do
-	BRIGHTNESS=$(xbacklight -get)
-	echo "BRI${BRIGHTNESS}"
-	sleep 5;
-done > "$BAR_FIFO" &
-
-
-while true;
-do
 	VOL=$(amixer sget Master | tail -1 | sed -re 's/.*\[([0-9]+%)\].*/\1/')
 	echo "VOL$VOL"
 	sleep 1
