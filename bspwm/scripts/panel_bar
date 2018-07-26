@@ -65,7 +65,7 @@ while read -r line ; do
 								str="\uf111"
 								;;
 						esac
-						wm="${wm} ${str} "
+						wm="${wm} %{A:bspc desktop -f ${name}:}${str}%{A} "
 				esac
 				shift
 			done
