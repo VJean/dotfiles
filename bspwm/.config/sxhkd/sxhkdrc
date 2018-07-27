@@ -14,6 +14,15 @@ super + @space
 super + Escape
 	pkill -USR1 -x sxhkd
 
+XF86AudioPlay
+  playerctl play-pause
+
+XF86AudioPrev
+  playerctl previous
+
+XF86AudioNext
+  playerctl next
+
 XF86AudioMute
 	amixer -q set Master toggle
 
