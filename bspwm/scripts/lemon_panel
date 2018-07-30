@@ -19,8 +19,9 @@ bspc subscribe report > "$BAR_FIFO" &
 
 while true;
 do
-	PERC=$(acpi --battery | cut -d, -f2 | tr -d ' ')
-	DISCHARGING=$(acpi --battery | grep -c Discharging)
+  ACPI=$(acpi --battery)
+	PERC=$(echo "${ACPI}" | cut -d, -f2 | tr -d ' ')
+	DISCHARGING=$(echo "${ACPI}" | grep -c Discharging)
 	echo "BAT${DISCHARGING},${PERC}"
 	sleep 5;
 done > "$BAR_FIFO" &

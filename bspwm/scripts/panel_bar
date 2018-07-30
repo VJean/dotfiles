@@ -12,13 +12,23 @@ while read -r line ; do
 			# battery capacity
 			_line=(${line#???})
 			discharging=(${_line%%,*})
-			if [ "$discharging" -eq 1 ] ; then
-				icon='\uf241'
-			else
-				icon='\uf1e6'
-			fi
 			level="${_line##*,}"
-			bat="${icon} ${level}"
+      # get rid of the '%' symbol
+      level="${level%?}"
+			if [ "$discharging" -eq 0 ] ; then
+				icon='\uf1e6'
+			else
+        if [ "$level" -lt 25 ] ; then
+				  icon='\uf243'
+        elif [ "$level" -lt 50 ] ; then
+          icon='\uf242'
+        elif [ "$level" -lt 75 ] ; then
+          icon='\uf241'
+        else
+          icon='\uf240'
+        fi
+			fi
+			bat="${icon} ${level}%"
 			;;
 		VOL*)
 			# volume level
