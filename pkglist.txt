@@ -47,6 +47,7 @@ jfsutils
 lemonbar-xft-git
 less
 libnotify
+libreoffice-fresh
 libtool
 licenses
 linux
