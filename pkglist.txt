@@ -32,6 +32,7 @@ gawk
 gcc
 gcc-libs
 gettext
+gimp
 git
 glibc
 grep
