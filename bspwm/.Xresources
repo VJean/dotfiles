@@ -1,6 +1,7 @@
 URxvt.font:xft:Iosevka Term:pixelsize=15
 URxvt.scrollBar:False
 URxvt.depth:32
+URxvt.internalBorder:12
 
 rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
 rofi.lines: 10
