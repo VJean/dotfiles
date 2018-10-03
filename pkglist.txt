@@ -69,6 +69,7 @@ openssh
 openvpn
 otf-font-awesome-4
 pacman
+pacman-contrib
 patch
 pciutils
 pcmciautils
