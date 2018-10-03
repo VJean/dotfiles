@@ -77,6 +77,8 @@ pkgconf
 playerctl
 procps-ng
 psmisc
+python-pip
+python-pipenv
 python-pywal
 python-setuptools
 ranger
