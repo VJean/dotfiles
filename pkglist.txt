@@ -20,6 +20,7 @@ diffutils
 dunst
 e2fsprogs
 enpass-bin
+exfat-utils
 fakeroot
 feh
 figlet
