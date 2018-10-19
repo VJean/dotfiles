@@ -10,4 +10,6 @@ redshift &
 
 amixer -q set Master 70%
 
+udiskie &
+
 exec bspwm
