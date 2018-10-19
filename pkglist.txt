@@ -105,6 +105,7 @@ thefuck
 thunderbird
 ttf-font-awesome-4
 ttf-iosevka-term
+udisks2
 usbutils
 util-linux
 vi
