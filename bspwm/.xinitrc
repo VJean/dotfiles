@@ -22,5 +22,5 @@ amixer -q set Master 70%
 # manage usb devices (automount, notify, etc)
 udiskie &
 
-# execute the actual window manager
-exec bspwm
+# execute the display manager
+exec tdm --xstart
