@@ -41,6 +41,7 @@ grep
 groff
 gzip
 htop
+i3lock-color
 inetutils
 intel-ucode
 iproute2
@@ -117,6 +118,7 @@ w3m
 which
 wireless_tools
 wpa_supplicant
+xdotool
 xf86-video-intel
 xf86-video-vesa
 xfsprogs
