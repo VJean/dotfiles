@@ -38,6 +38,13 @@ XF86MonBrightnessUp
 XF86MonBrightnessDown
 	xbacklight -dec 10
 
+# toogle a dropdown/scratchpad terminal
+# get the window id, then toogle the hidden flag, and finally focus the node
+F12
+    xdotool search --onlyvisible --classname DropdownTerminal windowunmap \
+    || xdotool search --classname DropdownTerminal windowmap \
+    || urxvt -name DropdownTerminal -geometry 130x25+480
+
 #
 # bspwm hotkeys
 #

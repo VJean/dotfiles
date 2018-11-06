@@ -20,6 +20,9 @@ bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
+# dropdown terminal, xdotool (in sxhdrc) manages the hiding/showing
+bspc rule -a "URxvt:DropdownTerminal" sticky=on state=floating
+
 dunst -nb ${color0} -nf ${color7} -nfr ${color1} &
 
 ~/scripts/lemon_panel &
