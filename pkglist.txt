@@ -10,7 +10,6 @@ bison
 bspwm
 bzip2
 compton
-console-tdm
 coreutils
 cowsay
 cryptsetup
