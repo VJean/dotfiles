@@ -115,6 +115,7 @@ vim
 vlc
 w3m
 which
+windscribe-cli
 wireless_tools
 wpa_supplicant
 xdotool
