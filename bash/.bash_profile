@@ -6,4 +6,4 @@
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # start X (sources ~/.xinitrc)
-source /usr/bin/startx
+[[ $(tty) == "/dev/tty1" ]] && source /usr/bin/startx
