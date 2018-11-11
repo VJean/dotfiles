@@ -11,7 +11,7 @@ test -f ~/.fehbg && ~/.fehbg &
 compton -b
 
 # set color scheme from current wallpaper
-wal -R -a 80
+wal -R -a 90
 
 # filter blue colors on the screen
 redshift &
