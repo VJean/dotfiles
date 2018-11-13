@@ -108,6 +108,7 @@ ttf-font-awesome-4
 ttf-iosevka-term
 udiskie
 udisks2
+unzip
 usbutils
 util-linux
 vi
