@@ -104,8 +104,6 @@ systemd-sysvcompat
 tar
 texinfo
 texlive-core
-texlive-local-latex-bin
-texlive-localmanager-git
 thefuck
 thunderbird
 ttf-font-awesome-4
