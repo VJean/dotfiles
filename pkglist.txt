@@ -76,6 +76,7 @@ patch
 pciutils
 pcmciautils
 perl
+perl-term-shellui
 pkgconf
 playerctl
 procps-ng
