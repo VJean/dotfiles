@@ -22,7 +22,12 @@ bspc config gapless_monocle      true
 
 # dropdown terminal, xdotool (in sxhdrc) manages the hiding/showing
 bspc rule -a "URxvt:DropdownTerminal" sticky=on state=floating
+# Pycharm
+bspc rule -a "jetbrains-pycharm-ce" state=floating
 
 dunst -nb ${color0} -nf ${color7} -nfr ${color1} &
 
 ~/scripts/lemon_panel &
+
+# trick Java applications (or else they won't start up)
+wmname LG3D
