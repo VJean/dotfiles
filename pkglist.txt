@@ -81,6 +81,7 @@ pkgconf
 playerctl
 procps-ng
 psmisc
+pycharm-community-edition
 python-pip
 python-pipenv
 python-pywal
