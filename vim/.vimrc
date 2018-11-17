@@ -30,3 +30,6 @@ set smartindent
 " 1 tab = 2 spaces
 set shiftwidth=4
 set tabstop=4
+
+set splitbelow
+set splitright
