@@ -121,6 +121,7 @@ w3m
 which
 windscribe-cli
 wireless_tools
+wmname
 wpa_supplicant
 xdotool
 xf86-video-intel
