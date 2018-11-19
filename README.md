@@ -24,5 +24,5 @@ Target = *
 
 [Action]
 When = PostTransaction
-Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /home/user/dotfiles/pkglist.txt && sudo -u user -i git --git-dir=/home/user/dotfiles/.git --work-tree=/home/user/dotfiles commit pkglist.txt -m "Update pkglist"'
+Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /home/user/dotfiles/pkglist.txt && sudo -u user -i git -C /home/user/dotfiles commit pkglist.txt -m "Update pkglist"'
 ```
