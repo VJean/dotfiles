@@ -1,4 +1,4 @@
-# Dotfile
+# Dotfiles
 
 Installation and management with GNU stow.
 
