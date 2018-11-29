@@ -8,7 +8,16 @@
 # load colorscheme from pywal
 (cat ~/.cache/wal/sequences &)
 
-PS1='\e[32;1m\u@\h \W \$ \e[0m'
+# enable bash completion for git
+source /usr/share/git/completion/git-completion.bash
+# make git prompt available 
+source /usr/share/git/completion/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWUPSTREAM=auto
+
+PS1='\e[32;1m\u@\h \W\e[0m$(__git_ps1 " (%s)") \e[32;1m\$ \e[0m'
 
 eval $(thefuck --alias)
 
