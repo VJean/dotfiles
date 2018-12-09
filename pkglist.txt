@@ -67,6 +67,7 @@ nano
 netctl
 nmap
 ntfs-3g
+ntop
 nvidia-settings
 openssh
 openvpn
