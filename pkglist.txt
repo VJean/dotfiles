@@ -13,6 +13,7 @@ compton
 coreutils
 cowsay
 cryptsetup
+deluge
 device-mapper
 dhcpcd
 dialog
