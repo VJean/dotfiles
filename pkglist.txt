@@ -92,6 +92,7 @@ ranger
 redshift
 refind-efi
 reiserfsprogs
+ripgrep
 rofi
 rxvt-unicode
 s-nail
