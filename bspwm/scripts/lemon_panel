@@ -6,8 +6,8 @@ DIRNAME=$(dirname $0)
 
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
-	printf "%s\n" "The panel is already running." >&2
-	exit 1
+  printf "%s\n" "The panel is already running." >&2
+  exit 1
 fi
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
@@ -20,24 +20,24 @@ bspc subscribe report > "$BAR_FIFO" &
 while true;
 do
   ACPI=$(acpi --battery)
-	PERC=$(echo "${ACPI}" | cut -d, -f2 | tr -d ' ')
-	DISCHARGING=$(echo "${ACPI}" | grep -c Discharging)
-	echo "BAT${DISCHARGING},${PERC}"
-	sleep 5;
+  PERC=$(echo "${ACPI}" | cut -d, -f2 | tr -d ' ')
+  DISCHARGING=$(echo "${ACPI}" | grep -c Discharging)
+  echo "BAT${DISCHARGING},${PERC}"
+  sleep 5;
 done > "$BAR_FIFO" &
 
 while true;
 do
-	VOL=$(amixer sget Master | tail -1 | sed -re 's/.*\[([0-9]+)%\].*\[(on|off)\]/\2!\1/')
-	echo "VOL$VOL"
-	sleep 1
+  VOL=$(amixer sget Master | tail -1 | sed -re 's/.*\[([0-9]+)%\].*\[(on|off)\]/\2!\1/')
+  echo "VOL$VOL"
+  sleep 1
 done > "$BAR_FIFO" &
 
 while true;
 do
-	DATE=$(date +"%a %d %b, %H:%M")
-	echo "DAT$DATE" > "${BAR_FIFO}"
-	sleep 45
+  DATE=$(date +"%a %d %b, %H:%M")
+  echo "DAT$DATE" > "${BAR_FIFO}"
+  sleep 45
 done > "$BAR_FIFO" &
 
 . ~/.cache/wal/colors.sh
