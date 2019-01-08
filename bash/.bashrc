@@ -26,6 +26,8 @@ export HISTSIZE=2000
 export HISTFILESIZE=5000
 shopt -s histappend
 
+source /home/jean/git/z/z.sh
+
 alias ls='ls --color=auto'
 alias l='ls -CAhl'
 alias h='history'
