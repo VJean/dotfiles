@@ -5,3 +5,5 @@
     amend = commit --amend
 [include]
     path = ~/.gitconfig-local
+[core]
+	editor = vim
