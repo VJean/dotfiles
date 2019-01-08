@@ -17,7 +17,7 @@ GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM=auto
 
-PS1='\e[32;1m\u@\h \W\e[0m$(__git_ps1 " (%s)") \e[32;1m\$ \e[0m'
+PS1='\e[32;1m\u@\h \W\e[0m\e[3m$(__git_ps1 " (%s)") \e[0m\e[32;1m\$ \e[0m'
 
 eval $(thefuck --alias)
 
