@@ -35,8 +35,8 @@ done > "$BAR_FIFO" &
 
 while true;
 do
-  DATE=$(date +"%a %d %b, %H:%M")
-  echo "DAT$DATE" > "${BAR_FIFO}"
+  TIME=$(date +"%H:%M")
+  echo "TIM$TIME"
   sleep 45
 done > "$BAR_FIFO" &
 
