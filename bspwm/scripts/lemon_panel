@@ -40,6 +40,21 @@ do
   sleep 45
 done > "$BAR_FIFO" &
 
+while true;
+do
+  spotify_status=$(playerctl -p spotify status)
+  if [ $spotify_status != "Not available" ]
+  then
+    music_title=$(playerctl -p spotify metadata title)
+    music_artist=$(playerctl -p spotify metadata artist)
+    music_data="${music_artist} - ${music_title}"
+  else
+    music_data="NA"
+  fi
+  echo "MUS$music_data"
+  sleep 5
+done > "$BAR_FIFO" &
+
 . ~/.cache/wal/colors.sh
 
 cat "${BAR_FIFO}" | $DIRNAME/panel_bar | lemonbar -g "x25" -B "${color0}" -F "${color7}" -f "Iosevka Term-10" -f "Font Awesome-10" | bash &
