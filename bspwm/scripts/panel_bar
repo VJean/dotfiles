@@ -58,6 +58,17 @@ while read -r line ; do
         music="${icon} ${_line}"
       fi
       ;;
+    WIF*)
+      # Wifi network name
+      _line=${line#???}
+      icon='\uf1eb'
+      if [ ${_line} = "NA" ]
+      then
+        wifi=""
+      else
+        wifi="${icon} ${_line}"
+      fi
+      ;;
     W*)
       # bspc report
       wm=
@@ -94,5 +105,5 @@ while read -r line ; do
       done
       ;;
   esac
-  echo -e "%{l} ${wm}%{r}${music} ${time} ${bat} ${vol} "
+  echo -e "%{l} ${wm}%{r}${music} ${vol} ${wifi} ${bat} ${time}"
 done

@@ -55,6 +55,17 @@ do
   sleep 5
 done > "$BAR_FIFO" &
 
+while true;
+do
+  WIF="NA"
+  _link=$(iw dev wlp2s0 link)
+  if [[ ${_link} != 'Not connected.' ]]
+    then WIF=$(iw dev wlp2s0 link | grep -i ssid | sed -r 's/^.*ssid:\s*(.*)\s*$/\1/I')
+  fi
+  echo "WIF${WIF}"
+  sleep 30
+done > "$BAR_FIFO" &
+
 . ~/.cache/wal/colors.sh
 
 cat "${BAR_FIFO}" | $DIRNAME/panel_bar | lemonbar -g "x25" -B "${color0}" -F "${color7}" -f "Iosevka Term-10" -f "Font Awesome-10" | bash &
