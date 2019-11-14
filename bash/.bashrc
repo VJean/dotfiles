@@ -32,6 +32,7 @@ alias ls='ls --color=auto'
 alias l='ls -CAhl'
 alias h='history'
 alias testping='ping archlinux.org'
+alias ffpriv='firefox --private-window'
 
 cdl() { cd $1 && l; }
 
