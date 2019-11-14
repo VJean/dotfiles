@@ -7,3 +7,5 @@
 
 # start X (sources ~/.xinitrc)
 [[ $(tty) == "/dev/tty1" ]] && source /usr/bin/startx
+
+export PATH="$HOME/.cargo/bin:$PATH"
