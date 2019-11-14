@@ -4,7 +4,7 @@
     br = branch
     amend = commit --amend
     co = checkout
-    logol = log --graph --date=short --pretty=format:'%Cblue%h%Creset %Cred%ad%Creset %s%C(bold green)%d%Creset' --all
+    lol = log --graph --date=short --pretty=format:'%Cblue%h%Creset %Cred%ad%Creset %s%C(bold green)%d%Creset' --all
 [include]
     path = ~/.gitconfig-local
 [core]
