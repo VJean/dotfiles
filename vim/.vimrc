@@ -28,9 +28,9 @@ set autoindent
 set smartindent
 
 " 1 tab = 2 spaces
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
+set shiftwidth=4
+set tabstop=4
+set softtabstop=4
 
 " 1 tab = 4 spaces for Python
 autocmd FileType python setlocal ts=4 sw=4 sts=4
