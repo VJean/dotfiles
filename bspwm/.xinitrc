@@ -8,7 +8,7 @@ xrdb -merge ~/.Xresources
 test -f ~/.fehbg && ~/.fehbg &
 
 # Compositor
-compton -b
+picom -b
 
 # set color scheme from current wallpaper
 wal -R -a 90
