@@ -1,4 +1,4 @@
-URxvt.font:xft:Iosevka Term:pixelsize=15
+URxvt.font:xft:Iosevka Term:pixelsize=15,xft:Font Awesome:pixelsize=10
 URxvt.scrollBar:False
 URxvt.depth:32
 URxvt.internalBorder:12
