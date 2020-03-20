@@ -36,4 +36,4 @@ alias testping='ping archlinux.org'
 alias ffpriv='firefox --private-window'
 
 cdl() { cd $1 && l; }
-
+mkcd() { mkdir -p $1 && cd $1 ;}
