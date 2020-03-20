@@ -22,6 +22,7 @@ PS1='\[\e[32;1m\]\u@\h \W\[\e[0m\]\[\e[3m\]$(__git_ps1 " (%s)") \[\e[0m\]\[\e[32
 eval $(thefuck --alias)
 
 shopt -s checkwinsize
+export HISTCONTROL=ignoredups
 export HISTSIZE=2000
 export HISTFILESIZE=5000
 shopt -s histappend
