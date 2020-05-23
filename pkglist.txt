@@ -2,6 +2,7 @@ acpi
 acpid
 alsa-utils
 autoconf
+autoconf-archive
 automake
 base
 bash
@@ -12,9 +13,11 @@ binutils
 bison
 bspwm
 bzip2
+cblas
 ccnet-server
 coreutils
 cowsay
+cozette-otb
 cryptsetup
 deluge-gtk
 device-mapper
@@ -42,6 +45,8 @@ gettext
 gimp
 git
 glibc
+gnome-common
+gobject-introspection
 grep
 groff
 gzip
@@ -50,7 +55,9 @@ i3lock-color
 inetutils
 intel-ucode
 iproute2
+ipset
 iputils
+itstool
 iw
 jfsutils
 jq
@@ -66,6 +73,7 @@ logrotate
 lvm2
 m4
 make
+mallard-ducktype
 man-db
 man-pages
 mdadm
@@ -95,14 +103,16 @@ procps-ng
 proj
 psmisc
 pycharm-community-edition
+python-markdown
 python-pip
 python-pipenv
 python-pywal
 python-setuptools
+python2-numpy
 qbittorrent
 ranger
 redshift
-refind-efi
+refind
 reiserfsprogs
 ripgrep
 rofi
@@ -114,6 +124,7 @@ sed
 shadow
 spotify
 stow
+sublime-text
 sudo
 sxhkd
 sysfsutils
@@ -194,3 +205,6 @@ xorg-xvinfo
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+yay
+yelp-tools
+yelp-xsl
