@@ -20,7 +20,7 @@ super + Escape
 
 # screen lock
 super + l
-    i3lock -i ${HOME}/wallpapers/walblur.png --indicator --clock --timestr="%H:%M"
+    /home/jean/scripts/lock-screen.sh
 
 XF86AudioPlay
   playerctl play-pause
