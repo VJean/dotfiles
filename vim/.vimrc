@@ -34,6 +34,9 @@ set softtabstop=4
 
 " 1 tab = 4 spaces for Python
 autocmd FileType python setlocal ts=4 sw=4 sts=4
+" in makefiles, don't expand tabs to spaces
+" tabs have to be 8 chars
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 set splitbelow
 set splitright
