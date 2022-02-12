@@ -7,16 +7,16 @@ base
 bash
 bat
 bc
-bind-tools
+bind
 binutils
 bison
+bluez
+bluez-utils
 bspwm
 bzip2
 ccnet-server
 coreutils
 cowsay
-cozette-otb
-cozette-ttf
 cryptsetup
 deluge-gtk
 device-mapper
@@ -52,9 +52,11 @@ htop
 i3lock-color
 inetutils
 intel-ucode
+intellij-idea-community-edition
 iproute2
 iputils
 iw
+jack2
 jfsutils
 jq
 lemonbar-xft-git
@@ -66,6 +68,7 @@ libtool
 licenses
 linux
 logrotate
+luit
 lvm2
 m4
 make
@@ -86,6 +89,7 @@ openvpn
 otf-font-awesome-4
 pacman
 pacman-contrib
+pandoc
 patch
 pciutils
 pcmciautils
@@ -95,6 +99,7 @@ picom
 pkgconf
 playerctl
 polybar
+prince-bin
 procps-ng
 proj
 psmisc
@@ -103,7 +108,10 @@ python-pip
 python-pipenv
 python-pywal
 python-setuptools
+python2-pycparser
 qbittorrent
+qjackctl
+qmk
 ranger
 redshift
 refind
@@ -156,7 +164,6 @@ xorg-fonts-100dpi
 xorg-fonts-75dpi
 xorg-fonts-encodings
 xorg-iceauth
-xorg-luit
 xorg-mkfontscale
 xorg-server
 xorg-server-common
@@ -165,7 +172,6 @@ xorg-server-xdmx
 xorg-server-xephyr
 xorg-server-xnest
 xorg-server-xvfb
-xorg-server-xwayland
 xorg-sessreg
 xorg-setxkbmap
 xorg-smproxy
@@ -196,6 +202,7 @@ xorg-xrefresh
 xorg-xset
 xorg-xsetroot
 xorg-xvinfo
+xorg-xwayland
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
