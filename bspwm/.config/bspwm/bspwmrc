@@ -26,6 +26,8 @@ bspc config gapless_monocle      true
 bspc rule -a "URxvt:DropdownTerminal" sticky=on state=floating
 # Pycharm
 bspc rule -a "jetbrains-pycharm-ce" state=floating
+# Intellij IDEA
+bspc rule -a "jetbrains-idea-ce" state=floating
 
 dunst -nb ${color0} -nf ${color7} -nfr ${color1} &
 
