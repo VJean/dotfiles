@@ -9,3 +9,5 @@
     path = ~/.gitconfig-local
 [core]
 	editor = vim
+[init]
+	defaultBranch = main
