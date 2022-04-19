@@ -13,3 +13,5 @@
 	defaultBranch = main
 [push]
 	default = simple
+[merge]
+    conflictstyle=diff3
