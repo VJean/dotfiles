@@ -4,6 +4,7 @@ firefox
 git
 jq
 ripgrep
+stow
 thefuck
 vim
 zoxide
