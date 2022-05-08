@@ -1,6 +1,9 @@
 " Set to auto read when file is changed from the outside
 set autoread
 
+" Show line numbers
+set number
+
 " Show cursor position
 set ruler
 " Always show the status line
