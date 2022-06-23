@@ -43,3 +43,15 @@ autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 set splitbelow
 set splitright
+
+" netrw (directory browser) settings
+" split to the right
+let g:netrw_altv=1
+" split below
+let g:netrw_alto=0
+" remove banner
+let g:netrw_banner=0
+" open file by splitting vertically
+let g:netrw_browse_split=2
+" list files as tree
+let g:netrw_liststyle=3
