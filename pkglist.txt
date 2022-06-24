@@ -1,6 +1,7 @@
 bat
 code
 firefox
+fzf
 git
 jq
 ripgrep
