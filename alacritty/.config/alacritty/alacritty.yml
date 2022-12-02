@@ -1,6 +1,6 @@
 import:
   # define font size and offset there
-  - .config/alacritty/local-alacritty.yml
+  - ~/.config/alacritty/local-alacritty.yml
 
 # all the settings below will override any
 # setting imported from the import: block above
