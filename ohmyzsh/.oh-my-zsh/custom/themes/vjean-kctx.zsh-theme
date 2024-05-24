@@ -1,4 +1,3 @@
-source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 KUBE_PS1_PREFIX='k('
 KUBE_PS1_SYMBOL_ENABLE=false
 
