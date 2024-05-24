@@ -1,2 +1,6 @@
 # local alacritty configuration for specific overrides
 alacritty/.config/alacritty/local-alacritty.yml
+
+# tmux - ignore plugins AFTER having installed tmp
+# so that we ignore all future plugins installations
+tmux/.tmux/plugins/*
