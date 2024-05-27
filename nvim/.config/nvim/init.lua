@@ -26,6 +26,9 @@ require("lazy").setup({
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
+        "catppuccin/nvim", name = "catppuccin", priority = 1000
+    },
+    {
         "christoomey/vim-tmux-navigator",
         cmd = {
             "TmuxNavigateLeft",
@@ -50,4 +53,11 @@ vim.keymap.set('n', '<leader>ff', tsbuiltin.find_files, {})
 vim.keymap.set('n', '<leader>fg', tsbuiltin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', tsbuiltin.buffers, {})
 vim.keymap.set('n', '<leader>fh', tsbuiltin.help_tags, {})
+
+-- Catppuccin
+require("catppuccin").setup({
+    flavour = "mocha",
+})
+-- setup must be called before loading
+vim.cmd.colorscheme "catppuccin"
 
