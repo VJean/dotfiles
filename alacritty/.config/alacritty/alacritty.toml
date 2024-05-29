@@ -3,10 +3,6 @@ import = ["/Users/jean.vintache/.config/alacritty/local-alacritty.toml"]
 [env]
 TERM = "xterm-256color"
 
-[shell]
-args = ["new", "-A"]
-program = "/opt/homebrew/bin/tmux"
-
 [window.dimensions]
 columns = 135
 lines = 45
