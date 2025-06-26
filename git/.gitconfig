@@ -6,6 +6,24 @@
     co = checkout
     sw = switch
     lol = log --graph --date=short --pretty=format:'%Cblue%h%Creset %Cred%ad%Creset %s%C(bold green)%d%Creset' --all
+    # -- stacked branches aliases, from https://andrewlock.net/pushing-a-whole-stack-of-branches-with-a-single-git-command/
+    #
+    # if "fatal: ref refs/remotes/origin/HEAD is not a symbolic ref", run "git remote set-head origin --auto"
+    # to set the default branch for origin
+    default-branch = "!git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'"
+    # git merge-base but against the default branch of origin, and either HEAD or the specified param
+    merge-base-origin = "!f() { git merge-base ${1-HEAD} origin/$(git default-branch); };f"
+    # list stack of branches -- list all branches between merge-base and target branch
+    stack = "!f() { \
+        BRANCH=${1-HEAD}; \
+        MERGE_BASE=$(git merge-base-origin $BRANCH); \
+        git log --decorate-refs=refs/heads --simplify-by-decoration --pretty=format:\"%(decorate:prefix=,suffix=,tag=,separator=%n)\" $MERGE_BASE..$BRANCH; \
+    };f "
+    # push all branches of a stack in one command
+    push-stack = "!f() { \
+        BRANCH=${1-HEAD}; \
+        git stack $BRANCH | xargs -I {} git push --force-with-lease origin {}; \
+    };f "
 [include]
     path = ~/.gitconfig-local
 [column]
