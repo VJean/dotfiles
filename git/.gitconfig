@@ -1,17 +1,17 @@
 [alias]
-	st = status -s -b
-	ci = commit
-	br = branch
-	amend = commit --amend
-	co = checkout
-	lol = log --graph --date=short --pretty=format:'%Cblue%h%Creset %Cred%ad%Creset %s%C(bold green)%d%Creset' --all
+    st = status -s -b
+    ci = commit
+    br = branch
+    amend = commit --amend
+    co = checkout
+    lol = log --graph --date=short --pretty=format:'%Cblue%h%Creset %Cred%ad%Creset %s%C(bold green)%d%Creset' --all
 [include]
-	path = ~/.gitconfig-local
+    path = ~/.gitconfig-local
 [core]
-	editor = vim
+    editor = vim
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [push]
-	default = simple
+    default = simple
 [merge]
-	conflictstyle=diff3
+    conflictstyle=diff3
