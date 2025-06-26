@@ -4,14 +4,29 @@
     br = branch
     amend = commit --amend
     co = checkout
+    sw = switch
     lol = log --graph --date=short --pretty=format:'%Cblue%h%Creset %Cred%ad%Creset %s%C(bold green)%d%Creset' --all
 [include]
     path = ~/.gitconfig-local
+[column]
+    ui = auto
+[branch]
+    sort = -committerdate
 [core]
     editor = vim
 [init]
     defaultBranch = main
+[fetch]
+    prune = true
 [push]
     default = simple
+    autoSetupRemote = true
+[pull]
+    rebase = true
 [merge]
     conflictstyle=diff3
+[rerere]
+    enabled = true
+    autoupdate = true
+[tag]
+    sort = version:refname
