@@ -36,12 +36,13 @@ require("lazy").setup({
         dependencies = {
             "nvim-tree/nvim-web-devicons",
         },
-        config = function()
-            require("nvim-tree").setup {}
-        end,
+        opts = {},
     },
     {
-        "catppuccin/nvim", name = "catppuccin", priority = 1000
+        "catppuccin/nvim", name = "catppuccin", priority = 1000,
+        opts = {
+            flavour = "mocha",
+        },
     },
     {
         "christoomey/vim-tmux-navigator",
@@ -68,10 +69,24 @@ require("lazy").setup({
             "nvim-tree/nvim-web-devicons",
         },
     },
+    { "mason-org/mason.nvim", opts = {} },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {
+            ensure_installed = {
+                "lua_ls",
+                "pyright",
+            },
+        },
+    },
+    { "neovim/nvim-lspconfig" },
+    {
+        "folke/trouble.nvim",
+        opts = {},
+        cmd = "Trouble",
+        -- TODO add keys={} from https://github.com/folke/trouble.nvim#lazynvim
+    },
 })
-
--- nvim-tree
-require("nvim-tree").setup()
 
 -- Telescope
 local tsbuiltin = require('telescope.builtin')
@@ -81,9 +96,11 @@ vim.keymap.set('n', '<leader>fb', tsbuiltin.buffers, {})
 vim.keymap.set('n', '<leader>fh', tsbuiltin.help_tags, {})
 
 -- Catppuccin
-require("catppuccin").setup({
-    flavour = "mocha",
-})
 -- setup must be called before loading
 vim.cmd.colorscheme "catppuccin"
 
+-- LSP
+vim.lsp.enable({
+    "lua_ls",
+    "pyright",
+})
