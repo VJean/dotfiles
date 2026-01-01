@@ -42,6 +42,10 @@ require("lazy").setup({
         "catppuccin/nvim", name = "catppuccin", priority = 1000,
         opts = {
             flavour = "mocha",
+            dim_inactive = {
+                enabled = true,
+            },
+            auto_integrations = true,
         },
     },
     {
