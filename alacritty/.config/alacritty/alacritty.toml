@@ -7,4 +7,7 @@ columns = 135
 lines = 45
 
 [general]
-import = ["~/.config/alacritty/local-alacritty.toml"]
+import = [
+    "~/.config/alacritty/local-alacritty.toml",
+    "~/.config/alacritty/catppuccin-mocha.toml"
+]
