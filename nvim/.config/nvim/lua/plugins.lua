@@ -16,7 +16,8 @@ vim.opt.rtp:prepend(lazypath)
 -- Setting up plugins with lazy.nvim
 require("lazy").setup({
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.7',
+        'nvim-telescope/telescope.nvim',
+        version = "*",
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
