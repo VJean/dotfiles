@@ -56,11 +56,27 @@ require("lazy").setup({
         },
     },
     {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
+        "nvim-treesitter/nvim-treesitter",
+        branch = "main",
         lazy = false,
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
+        build = ":TSUpdate",
+    },
+    {
+        "folke/which-key.nvim",
+        event = "VeryLazy",
+        opts = {
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        },
+        keys = {
+            {
+                "<leader>?",
+                function()
+                    require("which-key").show({ global = false })
+                end,
+                desc = "Buffer Local Keymaps (which-key)",
+            },
         },
     },
     { "mason-org/mason.nvim", opts = {} },
@@ -137,4 +153,7 @@ vim.keymap.set('n', '<leader>ff', tsbuiltin.find_files, {})
 vim.keymap.set('n', '<leader>fg', tsbuiltin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', tsbuiltin.buffers, {})
 vim.keymap.set('n', '<leader>fh', tsbuiltin.help_tags, {})
+
+-- nvim-treesitter
+require("nvim-treesitter").install({"bash", "go", "helm", "python", "starlark", "yaml"})
 
