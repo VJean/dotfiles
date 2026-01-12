@@ -150,10 +150,11 @@ require("lazy").setup({
 
 -- Telescope
 local tsbuiltin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', tsbuiltin.find_files, {})
-vim.keymap.set('n', '<leader>fg', tsbuiltin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', tsbuiltin.buffers, {})
-vim.keymap.set('n', '<leader>fh', tsbuiltin.help_tags, {})
+vim.keymap.set('n', '<leader>ff', tsbuiltin.find_files, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>fg', tsbuiltin.live_grep, { desc = 'Telescope live grep' })
+vim.keymap.set('n', '<leader>fs', tsbuiltin.grep_string, { desc = 'Telescope grep string' })
+vim.keymap.set('n', '<leader>fb', tsbuiltin.buffers, { desc = 'Telescope buffers' })
+vim.keymap.set('n', '<leader>fh', tsbuiltin.help_tags, { desc = 'Telescope help tags' })
 
 -- nvim-treesitter
 require("nvim-treesitter").install({"bash", "go", "helm", "python", "starlark", "yaml"})
