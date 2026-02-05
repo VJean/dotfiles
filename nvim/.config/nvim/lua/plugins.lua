@@ -145,7 +145,8 @@ require("lazy").setup({
             fuzzy = { implementation = "prefer_rust_with_warning" }
         },
         opts_extend = { "sources.default" }
-    }
+    },
+    { 'https://tpope.io/vim/fugitive.git' }
 })
 
 -- Telescope
