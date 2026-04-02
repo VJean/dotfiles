@@ -1,28 +1,6 @@
 # Dotfiles
 
-Installation and management with GNU stow.
+Installation and management with Ansible and/or GNU stow.
+Ansible playbook has a minimal setup.yml playbook that installs a few packages
+and `stow`s relevant dotfiles.
 
-# Requirements
-
-## bpswm
-
-* bspwm, sxhkd, xorg
-* urxvt
-* rofi
-* redshift
-* pywal
-
-## Pacman pkg list
-
-`./pkglist.txt` is updated with the following pacman hook :
-```
-[Trigger]
-Operation = Install
-Operation = Remove
-Type = Package
-Target = *
-
-[Action]
-When = PostTransaction
-Exec = /bin/sh -c '/usr/bin/pacman -Qqe > /home/user/dotfiles/pkglist.txt'
-```
