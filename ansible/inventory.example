@@ -1,0 +1,7 @@
+[local]
+localhost ansible_connection=local
+
+[remote]
+# Add remote machines here, e.g.:
+# user@hostname
+# my-remote-machine

@@ -4,3 +4,6 @@ alacritty/.config/alacritty/local-alacritty.*
 # tmux - ignore plugins AFTER having installed tmp
 # so that we ignore all future plugins installations
 tmux/.tmux/plugins/*
+
+# ansible inventory with actual hostnames
+ansible/inventory

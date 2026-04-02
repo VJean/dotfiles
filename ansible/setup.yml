@@ -1,0 +1,92 @@
+---
+- name: Setup developer machine
+  hosts: all
+  gather_facts: true
+
+  vars:
+    dotfiles_repo: https://github.com/VJean/dotfiles.git
+    dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
+    stow_packages:
+      - nvim
+      - ohmyzsh
+      - tmux
+      - vim
+
+  tasks:
+    - name: Install packages (macOS via Homebrew)
+      community.general.homebrew:
+        name:
+          - stow
+          - bat
+          - ripgrep
+          - neovim
+          - fd
+          - zoxide
+        state: present
+      when: ansible_os_family == "Darwin"
+
+    - name: Install packages (Ubuntu/Debian via apt)
+      ansible.builtin.apt:
+        name:
+          - stow
+          - bat
+          - ripgrep
+          - neovim
+          - fd-find
+        state: present
+        update_cache: true
+      become: true
+      when: ansible_os_family == "Debian"
+
+    - name: Install zoxide (Ubuntu/Debian via script)
+      ansible.builtin.shell:
+        cmd: "curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh"
+        creates: "{{ ansible_env.HOME }}/.local/bin/zoxide"
+      when: ansible_os_family == "Debian"
+
+    - name: Check if dotfiles directory exists
+      ansible.builtin.stat:
+        path: "{{ dotfiles_dir }}"
+      register: dotfiles_stat
+
+    - name: Clone dotfiles
+      ansible.builtin.git:
+        repo: "{{ dotfiles_repo }}"
+        dest: "{{ dotfiles_dir }}"
+      when: not dotfiles_stat.stat.exists
+
+    - name: Stow dotfiles packages
+      ansible.builtin.command:
+        cmd: "stow {{ stow_packages | join(' ') }}"
+        chdir: "{{ dotfiles_dir }}"
+      changed_when: false
+
+- name: Setup local machine
+  hosts: local
+  gather_facts: true
+
+  vars:
+    dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
+    local_stow_packages:
+      - alacritty
+
+  tasks:
+    - name: Install Alacritty (macOS via Homebrew Cask)
+      community.general.homebrew_cask:
+        name: alacritty
+        state: present
+      when: ansible_os_family == "Darwin"
+
+    - name: Install Alacritty (Ubuntu/Debian via apt)
+      ansible.builtin.apt:
+        name: alacritty
+        state: present
+        update_cache: true
+      become: true
+      when: ansible_os_family == "Debian"
+
+    - name: Stow local dotfiles packages
+      ansible.builtin.command:
+        cmd: "stow {{ local_stow_packages | join(' ') }}"
+        chdir: "{{ dotfiles_dir }}"
+      changed_when: false
