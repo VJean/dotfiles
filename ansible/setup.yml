@@ -23,6 +23,7 @@
           - neovim
           - fd
           - zoxide
+          - jq
         state: present
       when: ansible_facts["os_family"] == "Darwin"
 
@@ -35,6 +36,7 @@
           - fzf
           - neovim
           - fd-find
+          - jq
         state: present
         update_cache: true
       become: true
