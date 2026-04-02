@@ -19,6 +19,7 @@
           - stow
           - bat
           - ripgrep
+          - fzf
           - neovim
           - fd
           - zoxide
@@ -31,6 +32,7 @@
           - stow
           - bat
           - ripgrep
+          - fzf
           - neovim
           - fd-find
         state: present
