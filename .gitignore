@@ -5,5 +5,8 @@ alacritty/.config/alacritty/local-alacritty.*
 # so that we ignore all future plugins installations
 tmux/.tmux/plugins/*
 
+# tmux - local machine-only overrides, not shared across machines
+tmux/.tmux.conf.local
+
 # ansible inventory with actual hostnames
 ansible/inventory
