@@ -1,9 +1,0 @@
-URxvt.font:xft:Iosevka Term:pixelsize=14
-URxvt.scrollBar:False
-URxvt.depth:32
-URxvt.internalBorder:12
-
-rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
-rofi.lines: 10
-rofi.width: 25
-rofi.font: Iosevka Term 12
