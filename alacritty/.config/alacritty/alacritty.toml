@@ -9,5 +9,5 @@ lines = 45
 [general]
 import = [
     "~/.config/alacritty/local-alacritty.toml",
-    "~/.config/alacritty/catppuccin-mocha.toml"
+    "~/.config/alacritty/theme.toml"
 ]
