@@ -94,3 +94,31 @@
         cmd: "stow {{ local_stow_packages | join(' ') }}"
         chdir: "{{ dotfiles_dir }}"
       changed_when: false
+
+    - name: Stow macOS-only dotfiles packages (theme sync script)
+      ansible.builtin.command:
+        cmd: "stow macos"
+        chdir: "{{ dotfiles_dir }}"
+      changed_when: false
+      when: ansible_facts["os_family"] == "Darwin"
+
+    - name: Render theme-sync LaunchAgent for this machine's home directory
+      ansible.builtin.template:
+        src: templates/com.jean.theme-sync.plist.j2
+        dest: "{{ ansible_facts['env'].HOME }}/Library/LaunchAgents/com.jean.theme-sync.plist"
+      register: theme_sync_plist
+      when: ansible_facts["os_family"] == "Darwin"
+
+    - name: Unload theme-sync LaunchAgent (ignore if not currently loaded)
+      ansible.builtin.command:
+        cmd: "launchctl unload {{ ansible_facts['env'].HOME }}/Library/LaunchAgents/com.jean.theme-sync.plist"
+      changed_when: false
+      failed_when: false
+      when: ansible_facts["os_family"] == "Darwin" and theme_sync_plist.changed
+
+    - name: Load theme-sync LaunchAgent
+      ansible.builtin.command:
+        cmd: "launchctl load {{ ansible_facts['env'].HOME }}/Library/LaunchAgents/com.jean.theme-sync.plist"
+      changed_when: false
+      failed_when: false
+      when: ansible_facts["os_family"] == "Darwin" and theme_sync_plist.changed
