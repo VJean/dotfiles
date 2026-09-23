@@ -72,18 +72,18 @@
   vars:
     dotfiles_dir: "{{ ansible_facts['env'].HOME }}/dotfiles"
     local_stow_packages:
-      - alacritty
+      - kitty
 
   tasks:
-    - name: Install Alacritty (macOS via Homebrew Cask)
+    - name: Install kitty (macOS via Homebrew Cask)
       community.general.homebrew_cask:
-        name: alacritty
+        name: kitty
         state: present
       when: ansible_facts["os_family"] == "Darwin"
 
-    - name: Install Alacritty (Ubuntu/Debian via apt)
+    - name: Install kitty (Ubuntu/Debian via apt)
       ansible.builtin.apt:
-        name: alacritty
+        name: kitty
         state: present
         update_cache: true
       become: true

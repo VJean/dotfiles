@@ -2,7 +2,7 @@
 # Syncs tmux and nvim to the current macOS light/dark appearance.
 # Triggered by com.jean.theme-sync.plist (LaunchAgent) on appearance change.
 #
-# Alacritty/kitty are no longer handled here:
+# kitty is not handled here:
 #  - kitty follows the OS appearance natively (dark-theme.auto.conf /
 #    light-theme.auto.conf) and reports changes via DEC mode 2031, so pi
 #    auto-switches themes by itself (tmux 3.7 relays the reports).
