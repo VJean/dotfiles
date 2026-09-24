@@ -74,6 +74,7 @@
     dotfiles_dir: "{{ ansible_facts['env'].HOME }}/dotfiles"
     local_stow_packages:
       - kitty
+      - aerospace
 
   tasks:
     - name: Install kitty (macOS via Homebrew Cask)
